@@ -140,9 +140,7 @@ export const Loginuser = async(req,res)=>{
           phone:user.phone,
           address:user.address,
           role: user.role
-      },jwttoken
-      
-  
+      },jwttoken    
   })
   }catch
       (error){
@@ -154,3 +152,13 @@ export const Loginuser = async(req,res)=>{
           })
   }
   }
+
+   //test controller
+   export const testController =(req,res)=>{
+    try{
+     res.send('protected routes')
+    }catch(error){
+console.log(error);
+res.send({error:'protected error'})
+    }
+ }
