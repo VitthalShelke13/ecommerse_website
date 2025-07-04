@@ -27,7 +27,8 @@ if(existinguser){
   return res.status(200).send({
     success:false,
     message:'User is alreday register please login',
-   error
+  //  error:'user is already register'
+  
   })
   
 
