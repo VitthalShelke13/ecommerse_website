@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* .poppins-light {
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+   */
+.navbar{
+  font-family: "Poppins" ;
+  
+  line-height: 26px;
+  font-size: 17px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 8px -6px gray;
+  --webkit-box-shadow:0 8px 8px -6px gray;
+border-bottom: solid gray!important;
+}
+
+.nav-link{
+  font-weight: 300!important;
+}
+
+.active{
+  border-bottom: 1px solid black;
+}
+
+.page_not_found{
+ display: flex;
+ min-height: 65vh;
+ align-items: center;
+ flex-direction: column;
+justify-content: center;
+}
+
+ /* register page */
+  /* .register{
+display: flex;
+justify-content: center;
+justify-items: center;
+min-height: 60vh;
+  } */
