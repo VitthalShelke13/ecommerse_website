@@ -6,12 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import '../../../styles/Authstyles.css'
+import { useAuth } from '../../../contextapi/contextAuth';
 
 const Login = () => {
    
   const [email,setemail]=useState('')
   const [password,setpassword]=useState('')
- 
+  const [Auth,SetAuth]= useAuth()
+
   const navigate = useNavigate()
  const submitHandler=async(e)=>{
 e.preventDefault()
@@ -21,7 +23,15 @@ const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/login`,
 try{
 if(res.data.success){
   toast.success(res.data.message,'login successfully')
+
   //  navigate('/')
+ SetAuth({
+  ...Auth,
+  user:res.data.user,
+jwttoken:res.data.jwttoken 
+ });
+ //we store data into local storage their but we dont save in json format hence we convert it into object
+ localStorage.setItem('auth',JSON.stringify(res.data))
       setTimeout(() => {
       navigate('/');
     }, 1000)
